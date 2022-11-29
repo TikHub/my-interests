@@ -13,7 +13,12 @@ export const routes: Routes = [
       import('./private/private.component').then((c) => c.PrivateComponent),
   },
   {
-    path: '**',
+    path: 'not-found',
     component: NotFoundComponent,
+    title: 'Not Found',
+  },
+  {
+    path: '**',
+    redirectTo: 'not-found',
   },
 ];
