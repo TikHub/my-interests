@@ -4,13 +4,12 @@ import { NotFoundComponent } from './shared/components/not-found/not-found.compo
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./public/public.component').then((c) => c.PublicComponent),
+    loadChildren: () => import('./public/public-routes').then((m) => m.routes),
   },
   {
     path: '',
-    loadComponent: () =>
-      import('./private/private.component').then((c) => c.PrivateComponent),
+    loadChildren: () =>
+      import('./private/private-routes').then((m) => m.routes),
   },
   {
     path: 'not-found',
